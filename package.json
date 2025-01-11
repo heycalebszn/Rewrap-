@@ -1,0 +1,30 @@
+{
+  "name": "rewrap",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "rewrap-vite-tailwind": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "vite",
+    "react",
+    "js",
+    "ts",
+    "tailwind",
+    "jsx",
+    "tsx"
+  ],
+  "author": "Rapto",
+  "license": "MIT",
+  "description": "Installer for Vite + TailwindCSS",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "execa": "^9.5.2",
+    "nodemon": "^3.1.9",
+    "prompts": "^2.4.2",
+    "
