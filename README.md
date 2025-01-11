@@ -1,86 +1,92 @@
+Here's the README.md file content as code, ready to be saved as a file:
+
+```markdown
 # Rewrap Installer
 
-A CLI tool to set up a new or existing project with a selected framework, language, and features, tailored to your needs. This installer makes it easy to bootstrap your project while allowing you to select additional features and packages.
-
----
+Rewrap Installer is a powerful CLI tool that streamlines the process of setting up modern web development projects. It provides an interactive setup experience, allowing you to quickly configure a project with your preferred framework, language, and additional features.
 
 ## Features
 
-- Supports React, Vue, and Svelte frameworks
-- Choose between JavaScript and TypeScript
-- Option to include **shadcn/ui** components (React only)
-- Pre-configured TailwindCSS setup
-- Dark mode support
-- Add responsive layouts and pre-built components like forms and sidebars
-- Include popular icon sets like Lucide, Font Awesome, or Heroicons
-- Select and install additional packages like:
-  - React Router
-  - Axios
-  - Redux Toolkit
-  - React Query
-  - Framer Motion
-  - React Hook Form
-
----
+- **Multiple Framework Support**: Choose between React, Vue, and Svelte.
+- **Language Options**: Set up your project with JavaScript or TypeScript.
+- **TailwindCSS Integration**: Automatically installs and configures TailwindCSS.
+- **UI Component Libraries**: Option to include shadcn/ui components (for React projects).
+- **Icon Sets**: Choose from Lucide, Font Awesome, or Heroicons.
+- **Additional Features**:
+  - Dark Mode
+  - Responsive Sidebar
+  - Sample Form
+  - Animations
+- **Popular Package Integration**: Easily add packages like React Router, Axios, Redux Toolkit, React Query, Framer Motion, and React Hook Form.
 
 ## Installation
 
-### Prerequisites
-Make sure you have the following installed:
-- Node.js (v14 or later)
-- npm (v6 or later)
+You can use Rewrap Installer with npx without installing it globally:
 
-### Usage
+```bash
+npx rewrap-installer
+```
 
-1. Clone the repository or download the installer script:
-   ```bash
-   git clone https://github.com/your-repo/rewrap-installer.git
-   cd rewrap-installer
+Or, if you prefer, you can install it globally:
 
-	2.	Install dependencies:
+```shellscript
+npm install -g rewrap-installer
+```
 
-npm install
+Then run it using:
+
+```shellscript
+rewrap-installer
+```
+
+## Usage
+
+1. Run the installer command.
+2. Follow the interactive prompts to configure your project:
+
+1. Choose between creating a new project or configuring an existing one.
+2. Select your preferred framework (React, Vue, or Svelte).
+3. Choose the language (JavaScript or TypeScript).
+4. Opt for additional features and packages.
 
 
-	3.	Run the installer:
 
-./rewrap-installer
+3. The installer will set up your project with the selected configuration.
 
-How It Works
-	1.	The installer prompts you to:
-	•	Choose between a New Project or an Existing Project.
-	•	Specify your project name (for new projects).
-	•	Select a framework, language, and optional features.
-	•	Decide on additional packages to install.
-	2.	For new projects:
-	•	It creates a Vite-based project and installs TailwindCSS.
-	•	Adds configurations for the selected features.
-	3.	For existing projects:
-	•	Installs the selected features, additional packages, and components.
 
-Available Commands
-	•	Start Development Server:
+## Project Structure
 
+The installer creates a well-organized project structure:
+
+- Configures TailwindCSS with a custom configuration.
+- Sets up a global CSS file with design tokens for light and dark modes.
+- Creates reusable components like Layout and Sidebar (if selected).
+- Implements ThemeProvider for dark mode functionality (if selected).
+- Adds a sample form component (if selected).
+
+
+## Post-Installation
+
+After the installation is complete, you can start your development server:
+
+```shellscript
+cd your-project-name
 npm run dev
+```
 
+## Contributing
 
-	•	Build for Production:
+Contributions to Rewrap Installer are welcome! Please refer to the project's GitHub repository for contribution guidelines.
 
-npm run build
+## License
 
+[MIT License](LICENSE)
 
-	•	Lint Code:
+---
 
-npm run lint
+Happy coding with Rewrap Installer! 🚀
 
-Project Configuration
-	•	TailwindCSS:
-The tailwind.config.js and src/index.css files are automatically configured based on your choices.
-	•	Custom Components:
-	•	Pre-built components (e.g., Sidebar, Dark Mode toggle) are added if selected.
-	•	Easily extendable and customizable.
+```plaintext
 
-Contribution
-
-Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
-
+You can save this content directly as `README.md` in your project's root directory. This markdown file will render nicely on GitHub or other platforms that support markdown formatting.
+```
