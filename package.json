@@ -40,9 +40,12 @@
   "license": "MIT",
   "description": "Installer for Vite + TailwindCSS",
   "dependencies": {
+    "boxen": "^8.0.1",
     "chalk": "^5.4.1",
     "execa": "^9.5.2",
+    "gradient-string": "^3.0.0",
     "nodemon": "^3.1.9",
+    "ora": "^8.1.1",
     "prompts": "^2.4.2",
     "rewrap": "file:",
     "rewrap-vitejs-tailwind": "file:"
