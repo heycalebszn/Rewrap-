@@ -17,7 +17,9 @@
     "ts",
     "tailwind",
     "jsx",
-    "tsx"
+    "tsx",
+    "shadcn",
+    "ui"
   ],
   "author": "Rapto",
   "license": "MIT",
