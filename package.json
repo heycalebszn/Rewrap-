@@ -27,4 +27,6 @@
     "execa": "^9.5.2",
     "nodemon": "^3.1.9",
     "prompts": "^2.4.2",
-    "
+    "rewrap": "file:"
+  }
+}
