@@ -1,6 +1,6 @@
 {
   "name": "rewrap-vitejs-tailwind",
-  "version": "1.1.0",
+  "version": "1.14.0",
   "main": "index.js",
   "type": "module",
   "bin": {
