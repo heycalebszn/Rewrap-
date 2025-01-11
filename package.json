@@ -1,5 +1,5 @@
 {
-  "name": "rewrap",
+  "name": "rewrap-vitejs-tailwind",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -27,6 +27,8 @@
     "execa": "^9.5.2",
     "nodemon": "^3.1.9",
     "prompts": "^2.4.2",
-    "rewrap": "file:"
+    "rewrap": "file:",
+    "rewrap-vite-tailwind": "file:",
+    "rewrap-vitejs-tailwind": "file:"
   }
 }
