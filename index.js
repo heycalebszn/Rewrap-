@@ -3,6 +3,7 @@
 import prompts from "prompts";
 import { execa } from "execa";
 import chalk from "chalk"
+import fs from "fs";
 
 (async () => {
   console.log(chalk.green("\nWelcome to the Vite + TailwindCSS Installer! 🚀\n"));
@@ -47,7 +48,7 @@ import chalk from "chalk"
     await execa("npx", ["tailwindcss", "init", "-p"], { stdio: "inherit" });
 
     console.log(chalk.blue("\nConfiguring TailwindCSS...\n"));
-    const fs = require("fs");
+   
     const tailwindConfig = `
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
