@@ -14,11 +14,11 @@ To use this package, follow these steps:
 
 1. Install the package globally:
    ```bash
-   npm i -g rewrap-vite-tailwind
+   npm i -g rewrap-vitejs-tailwind
 
    or use npx:
    npx rewrap-vite-tailwind
 
-2. Run the Installer
+2. Run the Installer if you installed globally
 ```bash
    rewrap-vite-tailwind
