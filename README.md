@@ -84,3 +84,4 @@ Contributions to Rewrap Installer are welcome! Please refer to the project's Git
 
 Happy coding with Rewrap Installer! 🚀
 
+![npm](https://img.shields.io/npm/dm/<rewrap-vitejs-tailwind>)
