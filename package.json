@@ -36,7 +36,7 @@
     "shadcn",
     "ui"
   ],
-  "author": "Rapto",
+  "author": "Rapto | Caleb",
   "license": "MIT",
   "description": "Installer for Vite + TailwindCSS",
   "dependencies": {
