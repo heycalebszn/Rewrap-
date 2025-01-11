@@ -8,17 +8,32 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
-  "keywords": [
-    "vite",
-    "react",
-    "js",
-    "ts",
-    "tailwind",
-    "jsx",
-    "tsx"
-  ],
+"keywords": [
+  "vite",
+  "react",
+  "js",
+  "ts",
+  "tailwind",
+  "jsx",
+  "tsx",
+  "boilerplate",
+  "javascript",
+  "typescript",
+  "tailwindcss",
+  "vite-plugin",
+  "react-app",
+  "front-end",
+  "web-development",
+  "css-framework",
+  "npm-package",
+  "starter-template",
+  "react-starter",
+  "tailwind-starter",
+  "vite-starter",
+  "react-tailwind"
+],
   "author": "Rapto",
   "license": "MIT",
   "description": "Installer for Vite + TailwindCSS",
