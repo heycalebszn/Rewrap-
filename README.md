@@ -1,6 +1,3 @@
-Here's the README.md file content as code, ready to be saved as a file:
-
-```markdown
 # Rewrap Installer
 
 Rewrap Installer is a powerful CLI tool that streamlines the process of setting up modern web development projects. It provides an interactive setup experience, allowing you to quickly configure a project with your preferred framework, language, and additional features.
@@ -25,6 +22,7 @@ You can use Rewrap Installer with npx without installing it globally:
 
 ```bash
 npx rewrap-installer
+
 ```
 
 Or, if you prefer, you can install it globally:
@@ -86,7 +84,3 @@ Contributions to Rewrap Installer are welcome! Please refer to the project's Git
 
 Happy coding with Rewrap Installer! 🚀
 
-```plaintext
-
-You can save this content directly as `README.md` in your project's root directory. This markdown file will render nicely on GitHub or other platforms that support markdown formatting.
-```
