@@ -149,7 +149,7 @@ async function checkNpmInstalled() {
         { title: 'Axios', value: 'axios' },
         { title: 'Redux Toolkit', value: '@reduxjs/toolkit' },
         { title: 'React Query', value: 'react-query' },
-        { title: 'Framer Motion', value: 'framer-motion' },
+        { title: 'Motion (prev Framer Motion)', value: 'motion' },
         { title: 'React Hook Form', value: 'react-hook-form' },
       ],
     },
@@ -216,9 +216,9 @@ async function checkNpmInstalled() {
       await runCommand('npm', ['install', ...additionalPackages]);
     }
 
-    if (additionalFeatures.includes('animations') && !additionalPackages.includes('framer-motion')) {
-      console.log(chalk.blue('\nInstalling Framer Motion for animations...\n'));
-      await runCommand('npm', ['install', 'framer-motion']);
+    if (additionalFeatures.includes('animations') && !additionalPackages.includes('motion')) {
+      console.log(chalk.blue('\nInstalling Motion (prev Framer Motion) for animations...\n'));
+      await runCommand('npm', ['install', 'motion']);
     }
 
     if (additionalFeatures.includes('form') && !additionalPackages.includes('react-hook-form')) {
@@ -576,7 +576,7 @@ async function updateMainApp(additionalFeatures, iconSet) {
 import { Layout } from './components/Layout';
 ${additionalFeatures.includes('darkMode') ? "import { ThemeProvider } from './components/ThemeProvider';" : ''}
 ${additionalFeatures.includes('form') ? "import SampleForm from './components/SampleForm';" : ''}
-${additionalFeatures.includes('animations') ? "import { motion } from 'framer-motion';" : ''}
+${additionalFeatures.includes('animations') ? "import { motion } from 'motion';" : ''}
 
 function App() {
   return (
