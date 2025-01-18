@@ -1,10 +1,10 @@
 {
-  "name": "rewrap-vitejs-tailwind",
+  "name": "rewrapp",
   "version": "1.16.0",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "rewrap-vite-tailwind": "./index.js"
+    "rewrapp": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -48,6 +48,7 @@
     "ora": "^8.1.1",
     "prompts": "^2.4.2",
     "rewrap": "file:",
-    "rewrap-vitejs-tailwind": "file:"
+    "rewrap-vitejs-tailwind": "file:",
+    "rewrapp": "file:"
   }
 }

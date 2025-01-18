@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-
-
 import chalk from "chalk";
 import path from "path";
 import boxen from "boxen";
@@ -16,6 +14,42 @@ import {
 } from "./library/reactComponentSetup.js";
 import cmdPrompts from "./src/utils/cmdPrompts.js";
 import setupTailwindCSS from "./library/tailwindSetup.js";
+
+const ensurePackageJsonExists = async (targetDir) => {
+  const packageJsonPath = path.join(targetDir, "package.json");
+
+  try {
+    await fs.access(packageJsonPath);
+    console.log(chalk.green("package.json already exists."));
+  } catch {
+    console.log(chalk.yellow("package.json not found. Creating a default package.json..."));
+    const packageJsonContent = {
+      name: path.basename(targetDir),
+      version: "1.0.0",
+      description: "",
+      main: "index.js",
+      scripts: {
+        dev: "vite",
+        build: "vite build",
+        lint: "eslint .",
+      },
+      dependencies: {},
+      devDependencies: {},
+    };
+    await fs.writeFile(packageJsonPath, JSON.stringify(packageJsonContent, null, 2));
+    console.log(chalk.green("package.json created successfully."));
+  }
+};
+
+const installDependencies = async (targetDir) => {
+  await ensurePackageJsonExists(targetDir); 
+  try {
+    await runCommand("npm", ["install"], { cwd: targetDir });
+    console.log(chalk.green("Dependencies installed successfully."));
+  } catch (error) {
+    console.error(chalk.red("Error installing dependencies:"), error.message);
+  }
+};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -99,7 +133,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     }
 
     console.log(chalk.blue("\nInstalling dependencies...\n"));
-    await runCommand("npm", ["install"]);
+    await installDependencies(targetDir);
 
     await setupTailwindCSS();
 
