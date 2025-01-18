@@ -21,7 +21,7 @@ Rewrap Installer is a powerful CLI tool that streamlines the process of setting 
 You can use Rewrap Installer with npx without installing it globally:
 
 ```bash
-npx rewrap-installer
+npx rewrapp
 
 ```
 
