@@ -1,10 +1,10 @@
 {
   "name": "rewrap-vitejs-tailwind",
-  "version": "1.18.0",
+  "version": "1.24.0",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "rewrapp": "./index.js"
+    "rewrapp": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

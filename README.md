@@ -18,6 +18,11 @@ Rewrap Installer is a powerful CLI tool that streamlines the process of setting 
 
 ## Installation
 
+Install your project using vite
+```bash
+npm create vite@latest 
+```
+
 You can use Rewrap Installer with npx without installing it globally:
 
 ```bash
@@ -28,19 +33,20 @@ npx rewrapp
 Or, if you prefer, you can install it globally:
 
 ```shellscript
-npm install -g rewrap-installer
+npm i -g rewrap-vitejs-tailwind
 ```
 
 Then run it using:
 
 ```shellscript
-rewrap-installer
+rewrapp
 ```
 
 ## Usage
 
-1. Run the installer command.
-2. Follow the interactive prompts to configure your project:
+1. First install react using vite then
+2. Run the installer command.
+3. Follow the interactive prompts to configure your project:
 
 1. Choose between creating a new project or configuring an existing one.
 2. Select your preferred framework (React, Vue, or Svelte).

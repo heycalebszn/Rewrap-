@@ -9,9 +9,9 @@ export default async function setupTailwindCSS() {
     "-D",
     "tailwindcss",
     "postcss",
-    "autoprefixer",
+    "autoprefixer", 
   ]);
-  await runCommand("npx", ["tailwindcss", "init", "-p"]);
+  await runCommand("npm", ["install", "tailwindcss", "@tailwindcss/vite"]);
 
   // Configure TailwindCSS
   const tailwindConfig = `/** @type {import('tailwindcss').Config} */
@@ -69,10 +69,7 @@ export default async function setupTailwindCSS() {
            }`;
 
   // Create global CSS file
-  const globalCss = `@tailwind base;
-@tailwind components;
-@tailwind utilities;
- 
+  const globalCss = `@import "tailwindcss";
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -146,6 +143,16 @@ export default async function setupTailwindCSS() {
   }
 }`;
 
+const viteConfig = `
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})`
+
   await writeFile("tailwind.config.js", tailwindConfig);
   await writeFile("./src/index.css", globalCss);
+  await writeFile("vite.config.ts", viteConfig);
 }

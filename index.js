@@ -4,7 +4,7 @@ import path from "path";
 import boxen from "boxen";
 import gradient from "gradient-string";
 import { fileURLToPath } from "url";
-
+import fs from "fs/promises";
 import { checkNpmInstalled } from "./src/utils/checkNpm.js";
 import { runCommand } from "./src/utils/runCommand.js";
 
@@ -101,6 +101,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   try {
+    let targetDir = process.cwd();
     if (shouldCreateProject) {
       console.log(
         chalk.blue(`\nCreating a new Vite project: ${projectName}...\n`)
