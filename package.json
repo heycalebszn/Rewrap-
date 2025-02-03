@@ -1,6 +1,6 @@
 {
   "name": "rewrap-vitejs-tailwind",
-  "version": "1.24.0",
+  "version": "1.25.0",
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "preinstall": "npm cache clean --force || true",
+    "postinstall": "node scripts/fixPermission.js"
   },
   "keywords": [
     "vite",
