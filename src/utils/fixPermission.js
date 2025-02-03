@@ -1,18 +1,18 @@
-import { exec } from "child_process";
+const { execSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
-function fixPermissions() {
-  if (process.platform === "win32") {
-    console.log("Skipping permission fix on Windows.");
-    return;
-  }
+const npmCachePath = execSync("npm config get cache").toString().trim();
+const testPath = path.join(npmCachePath, "_test_write");
 
-  exec("sudo chown -R $(whoami) ~/.npm", (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Permission fix failed: ${stderr}`);
-    } else {
-      console.log("Permissions fixed successfully.");
-    }
-  });
+try {
+  fs.writeFileSync(testPath, "test");
+  fs.unlinkSync(testPath);
+} catch (err) {
+  console.error("\n🚨 Permission Issue Detected! 🚨");
+  console.error("Your npm cache folder has incorrect permissions.");
+  console.error("To fix this, run the following command:");
+  console.log("\n  sudo chown -R $(whoami) ~/.npm\n");
+  console.error("Then retry installing the package.\n");
+  process.exit(1); 
 }
-
-fixPermissions();
