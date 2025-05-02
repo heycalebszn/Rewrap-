@@ -12,7 +12,7 @@ export default async function setupTailwindCSS() {
     "autoprefixer", 
   ]);
   await runCommand("npm", ["install", "tailwindcss", "@tailwindcss/vite"]);
-  await runCommand("npx", ["tailwindcss", "init", "-p"]);
+  await runCommand("npm", ["exec", "tailwindcss@latest", "--", "init", "-p"]);
 
   // Configure TailwindCSS
   const tailwindConfig = `/** @type {import('tailwindcss').Config} */
