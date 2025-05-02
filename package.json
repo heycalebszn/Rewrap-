@@ -1,12 +1,13 @@
 {
-  "name": "rewrap-vitejs-tailwind",
-  "version": "1.28.0",
+  "name": "rewrapped",
+  "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "rewrapp": "index.js"
+    "rewrapped": "index.js"
   },
   "scripts": {
+    "build": "echo 'No build needed' && exit 0",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "preinstall": "npm cache clean --force || true",
@@ -40,7 +41,7 @@
   ],
   "author": "Rapto | Caleb",
   "license": "MIT",
-  "description": "Installer for Vite + TailwindCSS",
+  "description": "Installer for Vite + TailwindCSS and many packages",
   "dependencies": {
     "boxen": "^8.0.1",
     "chalk": "^5.4.1",
@@ -48,9 +49,6 @@
     "gradient-string": "^3.0.0",
     "nodemon": "^3.1.9",
     "ora": "^8.1.1",
-    "prompts": "^2.4.2",
-    "rewrap": "file:",
-    "rewrap-vitejs-tailwind": "file:",
-    "rewrapp": "file:"
+    "prompts": "^2.4.2"
   }
 }

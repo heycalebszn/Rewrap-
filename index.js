@@ -7,11 +7,7 @@ import { fileURLToPath } from "url";
 import fs from "fs/promises";
 import { checkNpmInstalled } from "./src/utils/checkNpm.js";
 import { runCommand } from "./src/utils/runCommand.js";
-
-import {
-  createComponents,
-  updateMainApp,
-} from "./library/reactComponentSetup.js";
+import { createComponents, updateMainApp } from "./library/reactComponentSetup.js";
 import cmdPrompts from "./src/utils/cmdPrompts.js";
 import setupTailwindCSS from "./library/tailwindSetup.js";
 
@@ -33,7 +29,10 @@ const ensurePackageJsonExists = async (targetDir) => {
         build: "vite build",
         lint: "eslint .",
       },
-      dependencies: {},
+      dependencies: {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+      },
       devDependencies: {},
     };
     await fs.writeFile(packageJsonPath, JSON.stringify(packageJsonContent, null, 2));
@@ -47,7 +46,8 @@ const installDependencies = async (targetDir) => {
     await runCommand("npm", ["install"], { cwd: targetDir });
     console.log(chalk.green("Dependencies installed successfully."));
   } catch (error) {
-    console.error(chalk.red("Error installing dependencies:"), error.message);
+    console.log(chalk.yellow('\nRetrying with legacy peer deps...'));
+    await runCommand("npm", ["install", "--legacy-peer-deps"], { cwd: targetDir });
   }
 };
 
@@ -115,7 +115,8 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
           "--template",
           `${framework}${language === "typescript" ? "-ts" : ""}`,
         ]);
-        process.chdir(projectName);
+        targetDir = path.join(process.cwd(), projectName);
+        process.chdir(targetDir);
       } catch (error) {
         console.error(
           chalk.red(
@@ -159,7 +160,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     if (additionalPackages.length > 0) {
       console.log(chalk.blue("\nInstalling additional packages...\n"));
-      await runCommand("npm", ["install", ...additionalPackages]);
+      await runCommand("npm", ["install", "--legacy-peer-deps", ...additionalPackages]);
     }
 
     if (
@@ -171,7 +172,11 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
           "\nInstalling Motion (prev Framer Motion) for animations...\n"
         )
       );
-      await runCommand("npm", ["install", "motion"]);
+      await runCommand("npm", ["install", "framer-motion"]);
+    }
+
+    if (additionalPackages.includes('react-query')) {
+      await runCommand('npm', ['install', 'react-query@4.0.0-beta.25']); 
     }
 
     if (

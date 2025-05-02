@@ -67,7 +67,7 @@ export default async function setupTailwindCSS() {
                },
              },
              plugins: [],
-           }`;
+  }`;
 
   // Create global CSS file
   const globalCss = `
@@ -145,16 +145,16 @@ export default async function setupTailwindCSS() {
   body {
     @apply bg-background text-foreground;
   }
-}`;
+  }`;
 
-const viteConfig = `
+  const viteConfig = `
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-})`
+  })`
 
   await writeFile("tailwind.config.js", tailwindConfig);
   await writeFile("./src/index.css", globalCss);

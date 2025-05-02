@@ -1,8 +1,8 @@
 import { writeFile } from "../src/utils/writeToFile.js";
 
 export async function createComponents(additionalFeatures, iconSet) {
-    // Create Layout component
-    const layoutContent = `import React from 'react';
+  // Create Layout component
+  const layoutContent = `import React from 'react';
   ${additionalFeatures.includes('sidebar') ? "import Sidebar from './Sidebar';" : ''}
   ${additionalFeatures.includes('darkMode') ? "import { useTheme } from './ThemeProvider';" : ''}
   ${iconSet === 'lucide-react' ? "import { Sun, Moon } from 'lucide-react';" : ''}
@@ -181,8 +181,8 @@ export async function createComponents(additionalFeatures, iconSet) {
   export default SampleForm;`;
       await writeFile('./src/components/SampleForm.jsx', formContent);
     }
-  }
-  
+}
+
 export async function updateMainApp(additionalFeatures, iconSet) {
     const mainAppContent = `import React from 'react';
   import { Layout } from './components/Layout';
@@ -223,6 +223,4 @@ export async function updateMainApp(additionalFeatures, iconSet) {
   
   export default App;`;
     await writeFile('./src/App.jsx', mainAppContent);
-  }
-  
-  
+}

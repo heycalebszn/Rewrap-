@@ -2,7 +2,6 @@ import chalk from "chalk";
 import ora from "ora";
 import { execa } from "execa";
 
-
 /**
  * Executes a shell command using `execa` and displays progress using a spinner.
  * 
