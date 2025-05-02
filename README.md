@@ -26,20 +26,20 @@ npm create vite@latest
 You can use Rewrap Installer with npx without installing it globally:
 
 ```bash
-npx rewrapp
+npx rewrapped
 
 ```
 
 Or, if you prefer, you can install it globally:
 
 ```shellscript
-npm i -g rewrap-vitejs-tailwind
+npm i -g rewrapped
 ```
 
 Then run it using:
 
 ```shellscript
-rewrapp
+rewrapped
 ```
 
 ## Usage
